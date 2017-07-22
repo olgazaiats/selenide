@@ -1,0 +1,9 @@
+D:\IT\Javacore\selenide\src\main\java\selenide\pages\google\AbstractPage.java
+D:\IT\Javacore\selenide\src\main\java\selenide\core\SelenideTestBase.java
+D:\IT\Javacore\selenide\src\main\java\selenide\pages\google\GoogleSearchPage.java
+D:\IT\Javacore\selenide\src\main\java\selenide\pages\openenglish\LoginPage.java
+D:\IT\Javacore\selenide\src\main\java\selenide\pages\google\GoogleSearchResultPage.java
+D:\IT\Javacore\selenide\src\main\java\selenide\pages\openenglish\RecoverPasswordPage.java
+D:\IT\Javacore\selenide\src\main\java\selenium\core\WebDriverTestBase.java
+D:\IT\Javacore\selenide\src\main\java\selenium\core\TestListener.java
+D:\IT\Javacore\selenide\src\main\java\util\PropertiesCache.java

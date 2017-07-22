@@ -1,0 +1,9 @@
+selenide\pages\google\GoogleSearchPage.class
+selenium\core\TestListener.class
+selenium\core\WebDriverTestBase.class
+util\PropertiesCache.class
+selenide\pages\openenglish\RecoverPasswordPage.class
+selenide\pages\google\GoogleSearchResultPage.class
+selenide\pages\google\AbstractPage.class
+selenide\pages\openenglish\LoginPage.class
+selenide\core\SelenideTestBase.class
