@@ -35,8 +35,8 @@ public class LoginPage extends SelenideTestBase{
     }
 
     public LoginPage logOut(){
-        logOutOption.hover();
-        accountMenu.click();
+        accountMenu.hover();
+        logOutOption.click();
         return this;
     }
 
