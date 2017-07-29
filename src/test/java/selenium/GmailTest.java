@@ -4,8 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 import selenium.core.WebDriverTestBase;
 
+@Features("Gmail login")
+@Stories(("WEB-555"))
 public class GmailTest extends WebDriverTestBase{
     private String gmailURL = "https://gmail.com";
     private String email = "olga.qatest@gmail.com";

@@ -5,9 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 import selenium.core.WebDriverTestBase;
 import selenium.pages.stylus.MainPage;
 
+@Features("Stylus search")
+@Stories(("WEB-111"))
 public class StylusTest extends WebDriverTestBase {
 
     private String mainPage = "https://stylus.ua/";

@@ -3,6 +3,8 @@ import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 import selenide.core.SelenideTestBase;
 import selenide.pages.google.GoogleSearchPage;
 import selenide.pages.google.GoogleSearchResultPage;
@@ -14,6 +16,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
+@Features("Google search")
+@Stories(("WEB-888"))
 public class GoogleTest extends SelenideTestBase{
     private String google = "http://google.com/ncr";
     private String searchText = "selenide";

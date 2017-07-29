@@ -1,15 +1,21 @@
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.annotations.Title;
 import selenide.core.SelenideTestBase;
 import selenide.pages.openenglish.LoginPage;
 import selenide.pages.openenglish.RecoverPasswordPage;
 
 import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.exactValue;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+@Features("OpenEnglish")
+@Stories(("WEB-777"))
 public class OpenEnglishTest extends SelenideTestBase{
     private String loginURL = "https://learningplatform.stg.openenglish.com";
     private String recoverEmailURL = "https://learningplatform.stg.openenglish.com/recovery.html";
@@ -28,6 +34,7 @@ public class OpenEnglishTest extends SelenideTestBase{
     }
 
 
+    @Title("Test for Email field validation on Recover Password page")
     @Test
     public void recoverEmailValidationTest() {
         open(recoverEmailURL);
@@ -84,5 +91,28 @@ public class OpenEnglishTest extends SelenideTestBase{
         $(By.xpath(tooltipXPath))
                 .shouldHave(text("Parece que hay un error en la contraseña. Por favor, inténtelo de nuevo."));
         $("#captcharesponse").shouldHave(attribute("placeholder", "Ingrese texto de seguridad"));
+    }
+
+    @Test
+    public void verifyRecordarMisDatosCheck(){
+        open(loginURL);
+        LoginPage loginPage = new LoginPage();
+        //How to verify checkbox is checked???
+        loginPage.enterEmail(loginEmail).enterPassword(loginPass).checkRemeberCheckbox().logIn();
+        $("#nav-home").shouldHave(text("inicio"));
+        loginPage.logOut();
+        $("#username").shouldHave(exactValue("shiosaky@gmail.com"));
+    }
+
+
+    //Not ready yet
+    @Test
+    public void verifyIngreseTextoDeSeguridad(){
+        open(loginURL);
+        LoginPage loginPage = new LoginPage();
+        loginPage.enterEmail(loginEmail).enterPassword("invalidPassword").logIn();
+        //Invalid password, the second attempt
+        loginPage.enterPassword("invalidPassword").logIn();
+        loginPage.enterEmail(loginEmail).enterPassword(loginPass).enterCapcha("test");
     }
 }

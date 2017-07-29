@@ -13,6 +13,8 @@ public class LoginPage extends SelenideTestBase{
     private SelenideElement logOutOption = $(By.xpath(".//*[@id='account-menu']//a[@href=\"/j_spring_security_logout\"]"));
     private SelenideElement accountMenu = $(By.xpath(".//*[@id='account-menu-nav']/strong"));
     private SelenideElement continuePopUpButton = $(By.xpath(".//*[@id='login_content']//a[@class=\"black-btn migration-continue-btn\"]"));
+    private SelenideElement rememberCheckbox = $(By.xpath("//label[@for='rememberLogin']"));
+    private SelenideElement capchaField = $(By.id("captcharesponse"));
 
     public LoginPage clickContinue(){
         continuePopUpButton.click();
@@ -37,6 +39,16 @@ public class LoginPage extends SelenideTestBase{
     public LoginPage logOut(){
         accountMenu.hover();
         logOutOption.click();
+        return this;
+    }
+
+    public LoginPage checkRemeberCheckbox(){
+        rememberCheckbox.click();
+        return this;
+    }
+
+    public LoginPage enterCapcha(String capcha){
+        capchaField.sendKeys(capcha);
         return this;
     }
 
