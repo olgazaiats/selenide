@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.WebDriverRunner.CHROME;
 
-@Listeners(selenium.core.TestListener.class)
+@Listeners(selenide.core.TestListener.class)
 public class SelenideTestBase {
 
     private String browser = System.getProperty("browser", CHROME);
