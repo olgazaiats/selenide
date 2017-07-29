@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.annotations.Title;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -21,6 +22,7 @@ public class GoogleSearchTest {
     private String searchText = "Selenium";
     private WebDriver webDriver;
 
+    @Title("Test to search Selenium word")
     @Test
     public void searchTest(){
         System.setProperty("webdriver.chrome.driver", "D:\\IT\\Javacore\\chromedriver.exe");

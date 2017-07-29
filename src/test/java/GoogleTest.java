@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
+import ru.yandex.qatools.allure.annotations.Title;
 import selenide.core.SelenideTestBase;
 import selenide.pages.google.GoogleSearchPage;
 import selenide.pages.google.GoogleSearchResultPage;
@@ -36,6 +37,7 @@ public class GoogleTest extends SelenideTestBase{
         $("#ires .g").shouldBe(visible).shouldHave(text("Selenide: concise UI tests in Java"), text("selenide.org"));
     }
 
+    @Title("Test searches for Selenium word with Page Object pattern")
     @Test
     public void searchInGoogleWithPageObjectTest(){
         open(google);
