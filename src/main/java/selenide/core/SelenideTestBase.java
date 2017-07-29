@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
 import static com.codeborne.selenide.WebDriverRunner.CHROME;
+import static util.PropertiesCache.getProperty;
 
 @Listeners(selenide.core.TestListener.class)
 public class SelenideTestBase {
@@ -30,6 +31,7 @@ public class SelenideTestBase {
                 break;
         }
         Configuration.browser = browser;
+        Configuration.timeout = Long.parseLong(getProperty("timeout"));
     }
 
 }
