@@ -1,4 +1,3 @@
-/*
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -106,7 +105,7 @@ public class OpenEnglishTest extends SelenideTestBase{
     }
 
 
-    //Not ready yet
+    //Not tested yet
     @Test
     public void verifyIngreseTextoDeSeguridad(){
         open(loginURL);
@@ -115,6 +114,8 @@ public class OpenEnglishTest extends SelenideTestBase{
         //Invalid password, the second attempt
         loginPage.enterPassword("invalidPassword").logIn();
         loginPage.enterEmail(loginEmail).enterPassword(loginPass).enterCapcha("test");
+        $(By.xpath("//div[@class=\"heading\"]")).shouldHave(text("¿Tiene problemas de ingreso?"));
+        $(".ui-icon.ui-icon-closethick").click();
+        $(By.xpath(tooltipXPath)).shouldHave(text("El texto de seguridad ingresado no es correcto. Por favor inténtalo otra vez."));
     }
 }
-*/
